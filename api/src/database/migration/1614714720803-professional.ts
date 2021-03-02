@@ -75,8 +75,23 @@ export class professional1614714720803 implements MigrationInterface {
                 },
                 {
                     name: 'number',
-                    type: 'integer',
+                    type: 'varchar',
                     isNullable: false,
+                },
+
+                {
+                    name: 'bio',
+                    type: 'varchar'
+                },
+
+                {
+                    name: 'days',
+                    type: 'varchar'
+                },
+
+                {
+                    name: 'hours',
+                    type: 'varchar'
                 },
 
                 {

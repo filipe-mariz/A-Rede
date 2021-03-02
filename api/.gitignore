@@ -1,3 +1,8 @@
+#dependeces
 /node_modules
+
+#folder
 /uploads
+
+#files
 ormconfig.json

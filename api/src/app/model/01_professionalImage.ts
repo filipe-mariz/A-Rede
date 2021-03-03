@@ -1,5 +1,4 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
-import professional from "../../routes/professionalRoutes";
 import Professional from './01_Professional'
 
 @Entity('professionalImage')

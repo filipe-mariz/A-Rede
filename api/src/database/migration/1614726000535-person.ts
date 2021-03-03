@@ -1,10 +1,10 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class professional1614714720803 implements MigrationInterface {
+export class person1614726000535 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(new Table({
-            name: 'Professional',
+            name: 'Person',
             columns: [
                 {
                     name: 'id',
@@ -17,87 +17,53 @@ export class professional1614714720803 implements MigrationInterface {
 
                 {
                     name: 'name',
-                    type: 'varchar',
-                    isNullable: false
-                },
-
-                {
-                    name: 'born',
                     type: 'varchar'
                 },
 
                 {
-                    name: 'activity',
+                    name: 'contact',
                     type: 'varchar',
                     isNullable: false
-                },
-
-                {
-                    name: 'email',
-                    type: 'varchar',
-                    isNullable: false,
-                    isUnique: true
-                },
-
-                {
-                    name: 'whatsapp',
-                    type: 'varchar',
-                    isNullable: false,
-                    isUnique: true
-                },
-
-                {
-                    name: 'country',
-                    type: 'varchar'
-                },
-
-                {
-                    name: 'state',
-                    type: 'varchar',
-                    isNullable: false,
                 },
 
                 {
                     name: 'city',
-                    type: 'varchar',
-                    isNullable: false,
+                    type: 'varchar'                    
                 },
 
                 {
                     name: 'district',
-                    type: 'varchar',
-                    isNullable: false
+                    type: 'varchar'
                 },
 
                 {
                     name: 'street',
-                    type: 'varchar',
-                    isNullable: false,
+                    type: 'varchar'                    
                 },
 
                 {
                     name: 'complement',
                     type: 'varchar',
                 },
+
                 {
                     name: 'number',
-                    type: 'varchar',
-                    isNullable: false,
+                    type: 'varchar'                    
                 },
 
                 {
-                    name: 'bio',
+                    name: 'help',
                     type: 'varchar'
                 },
 
                 {
-                    name: 'days',
-                    type: 'varchar'
+                    name: 'lat',
+                    type: 'decimal'
                 },
 
                 {
-                    name: 'hours',
-                    type: 'varchar'
+                    name: 'long',
+                    type: 'decimal'
                 },
 
                 {
@@ -117,7 +83,7 @@ export class professional1614714720803 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('Professional')
+        await queryRunner.dropTable('Person')
     }
 
 }

@@ -30,6 +30,9 @@ class Professional {
     @Column('varchar', { length: 20})
     city: string
 
+    @Column('varchar', { length: 20})
+    district: string
+
     @Column('varchar', { length: 70})
     street: string
 

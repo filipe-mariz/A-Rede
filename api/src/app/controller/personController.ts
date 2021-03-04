@@ -7,7 +7,7 @@ import personImage from '../view/02_PersonImage';
 
 export default {
     async create(request: Request, response: Response) {
-
+        const{} = request.body
     },
 
     async view(request: Request, response: Response) {

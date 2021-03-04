@@ -30,7 +30,7 @@ export class personImage1614727335664 implements MigrationInterface {
             foreignKeys: [
                 {
                     name: 'personaImage',
-                    columnNames: ['persona_id'],
+                    columnNames: ['person_id'],
                     referencedTableName: 'Person',
                     referencedColumnNames: ['id'],
                     onUpdate: 'CASCADE',

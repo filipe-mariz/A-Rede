@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import * as Yup from 'yup';
 import Person from '../model/02_Person';
+import PersonView from '../view/02_Person';
 import personImage from '../view/02_PersonImage';
 
 export default {
@@ -65,6 +66,10 @@ export default {
         await schemma.validate(data, {
             abortEarly: false
         })
+
+        const person = personRepository.create(data);
+        await personRepository.save(person);
+        response.status(201).json({ person })
     },
 
     async view(request: Request, response: Response) {

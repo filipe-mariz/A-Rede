@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import multer from 'multer'
+import multer from 'multer';
 import uploadConfig from '../config/uploads';
-import professionalController from '../app/controller/professionalController';
+import professionalController from '../app/controller/CRUD_Professional/01_Create';
 
 const professional = Router();
 const upload = multer(uploadConfig);

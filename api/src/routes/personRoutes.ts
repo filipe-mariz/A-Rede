@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import personController from '../app/controller/personController';
-import multer from 'multer'
+import multer from 'multer';
+import personController from '../app/controller/CRUD_Person/01_Create';
 import uploadConfig from '../config/uploads';
 
 const person = Router();

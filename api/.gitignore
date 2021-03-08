@@ -6,3 +6,4 @@
 
 #files
 ormconfig.json
+.env

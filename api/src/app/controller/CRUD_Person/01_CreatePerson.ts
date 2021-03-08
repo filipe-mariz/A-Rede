@@ -68,21 +68,6 @@ export default {
     const person = personRepository.create(data);
     await personRepository.save(person);
     response.status(201).json({ person });
-  },
-
-  async view(request: Request, response: Response) {
-
-  },
-
-  async show(request: Request, response: Response) {
-
-  },
-
-  async update(requeste: Request, response: Response) {
-
-  },
-
-  async delete(requeste: Request, response: Response) {
-
-  },
+  }
+  
 };

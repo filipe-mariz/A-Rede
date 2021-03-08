@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import multer from 'multer';
-import uploadConfig from '../config/uploads';
 import createprofessional from '../app/controller/CRUD_Professional/01_CreateProfessional';
 import readProfessional from '../app/controller/CRUD_Professional/02_ReadProfessional';
 import updateprofessional from '../app/controller/CRUD_Professional/03_UpdateProfessional';
 import deleteprofessional from '../app/controller/CRUD_Professional/04_DeleteProfessional';
+import uploadConfig from '../config/uploads';
 
 const professional = Router();
 const upload = multer(uploadConfig);

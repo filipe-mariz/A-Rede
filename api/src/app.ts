@@ -4,6 +4,7 @@ import cors from 'cors';
 import './database/connection';
 import path from 'path';
 import routes from './routes/routes';
+import 'dotenv/config';
 import errorHandler from './errors/handler';
 
 const app = express();

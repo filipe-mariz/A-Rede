@@ -1,7 +1,5 @@
-import {
-  Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn,
-} from 'typeorm';
-import Professional from './01_Professional';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn} from 'typeorm';
+import Professional from  './01_Professional';
 
 @Entity('professionalImage')
 

@@ -12,7 +12,7 @@ const upload = multer(uploadConfig);
 professional.post('/createprofessional', upload.array('images'), createprofessional.create);
 professional.get('/viewprofessional', readProfessional.view);
 professional.get('/viewprofessional/:id', readProfessional.show);
-professional.put('/updateprofessional/id', updateprofessional.update);
+professional.put('/updateprofessional/:id', updateprofessional.update);
 professional.delete('/deleteprofessional/:id', deleteprofessional.delete);
 
 export default professional;

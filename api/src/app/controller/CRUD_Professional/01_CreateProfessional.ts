@@ -30,6 +30,20 @@ export default {
     const requestImages = request.files as Express.Multer.File[];
     const professionalImage = requestImages.map((image) => ({ path: image.filename }));
 
+    const emailExists = professionalRepository.findOne({ where: { email } });
+    const wppExists = professionalRepository.findOne({where: { whatsapp } });
+    const userExists = professionalRepository.findOne({where: { userName } });
+
+    if (emailExists) {
+      return response.status(409).json({message: "This E-mail is already in use"})
+    }
+    if (wppExists) {
+      return response.status(409).json({message: "This WhatsApp is already in use"})
+    }
+    if (userExists) {
+      return response.status(409).json({message: "User already exists"})
+    }
+
     const data = {
       name,
       born,

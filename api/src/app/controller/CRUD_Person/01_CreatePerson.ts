@@ -2,8 +2,6 @@ import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import * as Yup from 'yup';
 import Person from '../../model/02_Person';
-import PersonView from '../../view/02_Person';
-import personImage from '../../view/02_PersonImage';
 
 export default {
   async create(request: Request, response: Response) {
@@ -22,10 +20,19 @@ export default {
       password,
     } = request.body;
 
-    const personRepository = getRepository(Person);
+    const personRepository = getRepository(Person);    
 
     const requestImages = request.files as Express.Multer.File[];
     const personImage = requestImages.map((image) => ({ path: image.filename }));
+
+    const contactExists = personRepository.findOne({ where: {contact}})
+    const userNameExists = personRepository.findOne({ where: {userName}})
+    if (contactExists) {
+      return response.sendStatus(409).json({message: "This number is already in use"})      
+    }
+    if (userNameExists) {
+      return response.sendStatus(409).json({message: "User already exist"})
+    }
 
     const data = {
       name,

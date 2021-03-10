@@ -71,7 +71,7 @@ export class person1614726000535 implements MigrationInterface {
           isNullable: false,
           isUnique: true,
         },
-
+ 
         {
           name: 'password',
           type: 'varchar',

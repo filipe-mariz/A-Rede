@@ -1,14 +1,14 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import personView from '../../view/02_Person';
-import Person from '../../model/01_Professional';
+import Person from '../../model/02_Person';
 
 export default {
     async view(request: Request, response: Response) {
         const personRepository = getRepository(Person);
 
         const person = await personRepository.find({
-            relations: ['image']
+            relations: ['Image'] 
         })
 
         return response.json(personView.renderMany(person))
@@ -16,6 +16,14 @@ export default {
     },
 
     async show(request: Request, response: Response) {
-        
+        const { id } = request.params
+
+        const personRepository = getRepository(Person)
+
+        const person = await personRepository.findOneOrFail(id, {
+            relations: ['Image']
+        });
+
+        return response.json(personView.Render(person));
     }
 }

@@ -3,7 +3,7 @@ import {
   BeforeInsert, BeforeUpdate
  } from 'typeorm';
 import bcrypt from 'bcryptjs'
-import PersonImage from './02_PersonImage';
+import Image from './02_PersonImage';
 
 @Entity('Person')
 
@@ -46,18 +46,18 @@ class Person {
 
     @Column('varchar', { length: 50 })
     password: string
-
+ 
     @BeforeInsert()
     @BeforeUpdate()
     hashPassword() {
       this.password = bcrypt.hashSync(this.password, 8)
     }
 
-    @OneToMany(() => PersonImage, (personImage) => personImage.person, {
+    @OneToMany(() => Image, personImage => personImage.person, {
       cascade: ['insert', 'update'],
     })
-    @JoinColumn({ name: 'persona_id' })
-    personImage: PersonImage[]
+    @JoinColumn({ name: 'person_id' })
+    Image: Image[]
 }
 
 export default Person;

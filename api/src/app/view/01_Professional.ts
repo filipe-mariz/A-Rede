@@ -4,7 +4,7 @@ import imagesView from './01_ProfessionalImage';
 export default {
   Render(professional: Professional) {
     return {
-      name: professional.name,
+      name: professional.name, 
       activity: professional.activity,
       email: professional.email,
       whatsapp: professional.whatsapp,
@@ -18,6 +18,6 @@ export default {
   },
 
   renderMany(professional: Professional[]) {
-    return professional.map((professional) => this.render(professional));
+    return professional.map((professional) => this.Render(professional));
   },
 };

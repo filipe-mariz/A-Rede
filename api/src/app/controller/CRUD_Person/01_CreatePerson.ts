@@ -8,7 +8,7 @@ export default {
     const {
       name,
       contact,
-      city,
+      city, 
       district,
       street,
       complement,
@@ -23,8 +23,8 @@ export default {
     const personRepository = getRepository(Person);    
 
     const requestImages = request.files as Express.Multer.File[];
-    const personImage = requestImages.map((image) => ({ path: image.filename }));
-
+    const image = requestImages.map((image) => ({ path: image.filename }));
+    /*
     const contactExists = personRepository.findOne({ where: {contact}})
     const userNameExists = personRepository.findOne({ where: {userName}})
     if (contactExists) {
@@ -32,7 +32,7 @@ export default {
     }
     if (userNameExists) {
       return response.sendStatus(409).json({message: "User already exist"})
-    }
+    }*/
 
     const data = {
       name,
@@ -47,7 +47,7 @@ export default {
       long,
       userName,
       password,
-      personImage,
+      image,
     };
 
     const schemma = Yup.object().shape({
@@ -63,9 +63,9 @@ export default {
       long: Yup.number().required(),
       userName: Yup.string().required(),
       password: Yup.string().required(),
-      personImage: Yup.array(Yup.object().shape({
-        path: Yup.string().required(),
-      })),
+      image: Yup.array(Yup.object().shape({
+        path: Yup.string().required()
+      }))
     });
 
     await schemma.validate(data, {

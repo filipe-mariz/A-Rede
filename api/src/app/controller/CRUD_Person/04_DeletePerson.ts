@@ -4,7 +4,7 @@ import Person from '../../model/01_Professional';
 
 export default {
     async delete(request: Request, response: Response) {
-        const delet = await getRepository(Person).delete(request.params.id)
+        const results = await getRepository(Person).delete(request.params.id)
 
         return response.json({mesage: "User successfully deleted"})
     }

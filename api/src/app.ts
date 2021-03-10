@@ -1,8 +1,8 @@
 import 'reflect-metadata';
 import express from 'express';
 import cors from 'cors';
-import './database/connection';
 import path from 'path';
+import './database/connection';
 import routes from './routes/routes';
 import 'dotenv/config';
 import errorHandler from './errors/handler';

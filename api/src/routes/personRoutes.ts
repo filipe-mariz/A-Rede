@@ -9,7 +9,7 @@ import uploadConfig from '../config/uploads';
 const person = Router();
 const upload = multer(uploadConfig);
 
-person.post('/createperson', upload.array('images'), createPerson.create);
+person.post('/createperson', upload.array('Images'), createPerson.create);
 person.get('/viewperson', readPerson.view);
 person.get('/viewperson/:id', readPerson.show);
 person.put('/updateperson/:id', updatePerson.update);

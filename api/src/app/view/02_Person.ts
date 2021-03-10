@@ -14,11 +14,11 @@ export default {
       help: person.help,
       lat: person.lat,
       long: person.long,
-      image: personImage.renderMany(person.personImage),
+      image: personImage.renderMany(person.Image),
     };
   },
 
   renderMany(person: Person[]) {
-    return person.map((person) => this.render(person));
+    return person.map((person) => this.Render(person));
   },
 };

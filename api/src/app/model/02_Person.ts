@@ -1,6 +1,8 @@
-import {
+import { 
   Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn,
-} from 'typeorm';
+  BeforeInsert, BeforeUpdate
+ } from 'typeorm';
+import bcrypt from 'bcryptjs'
 import PersonImage from './02_PersonImage';
 
 @Entity('Person')
@@ -43,7 +45,13 @@ class Person {
     userName: string
 
     @Column('varchar', { length: 50 })
-    passwordHash: string
+    password: string
+
+    @BeforeInsert()
+    @BeforeUpdate()
+    hashPassword() {
+      this.password = bcrypt.hashSync(this.password, 8)
+    }
 
     @OneToMany(() => PersonImage, (personImage) => personImage.person, {
       cascade: ['insert', 'update'],

@@ -19,7 +19,7 @@ export default {
       lat,
       long,
       userName,
-      passwordHash,
+      password,
     } = request.body;
 
     const personRepository = getRepository(Person);
@@ -39,7 +39,7 @@ export default {
       lat,
       long,
       userName,
-      passwordHash,
+      password,
       personImage,
     };
 
@@ -55,7 +55,7 @@ export default {
       lat: Yup.number().required(),
       long: Yup.number().required(),
       userName: Yup.string().required(),
-      passwordHash: Yup.string().required(),
+      password: Yup.string().required(),
       personImage: Yup.array(Yup.object().shape({
         path: Yup.string().required(),
       })),

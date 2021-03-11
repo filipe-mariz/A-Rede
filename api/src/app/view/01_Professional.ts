@@ -10,7 +10,7 @@ export default {
       whatsapp: professional.whatsapp,
       state: professional.state,
       city: professional.city,
-      bio: professional.bio,
+      bio: professional.bio, 
       days: professional.days,
       hours: professional.hours,
       images: imagesView.renderMany(professional.image),

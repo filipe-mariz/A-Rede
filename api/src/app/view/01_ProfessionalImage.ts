@@ -11,4 +11,4 @@ export default {
   renderMany(images: Image[]) {
     return images.map((image) => this.Render(image));
   },
-};
+}; 

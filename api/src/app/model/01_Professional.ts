@@ -68,7 +68,7 @@ class Professional {
       this.password = bcrypt.hashSync(this.password, 8)
     }
 
-    @OneToMany(() => Image, (image) => image.professional, {
+    @OneToMany(() => Image, image => image.professional, {
       cascade: ['insert', 'update'],
     })
     @JoinColumn({ name: 'professional_id' })

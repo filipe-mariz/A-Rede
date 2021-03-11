@@ -59,5 +59,5 @@ class Person {
     @JoinColumn({ name: 'person_id' })
     image: Image[];
 }
-
+ 
 export default Person;

@@ -10,7 +10,7 @@ export default class Image {
     @Column()
     path: string;
 
-    @ManyToOne(() => Person, person => person.Image)
+    @ManyToOne(() => Person, person => person.image)
     @JoinColumn({ name: 'person_id' })
     person: Person
 }

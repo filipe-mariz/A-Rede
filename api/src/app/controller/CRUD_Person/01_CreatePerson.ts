@@ -25,7 +25,7 @@ export default {
     const requestImages = request.files as Express.Multer.File[];
     const image = requestImages.map(image => {
       return { path: image.filename }
-  })
+    })
     /*
     const contactExists = personRepository.findOne({ where: {contact}})
     const userNameExists = personRepository.findOne({ where: {userName}})

@@ -10,7 +10,7 @@ export default {
       district: person.district,
       street: person.street,
       complement: person.complement,
-      number: person.number,
+      number: person.number, 
       help: person.help,
       lat: person.lat,
       long: person.long,

@@ -28,8 +28,10 @@ export default {
     const professionalRepository = getRepository(Professional);
 
     const requestImages = request.files as Express.Multer.File[];
-    const professionalImage = requestImages.map((image) => ({ path: image.filename }));
-
+    const image = requestImages.map(image => {
+      return { path: image.filename }
+    })
+    /*
     const emailExists = professionalRepository.findOne({ where: { email } });
     const wppExists = professionalRepository.findOne({where: { whatsapp } });
     const userExists = professionalRepository.findOne({where: { userName } });
@@ -42,7 +44,7 @@ export default {
     }
     if (userExists) {
       return response.status(409).json({message: "User already exists"})
-    }
+    }*/
 
     const data = {
       name,
@@ -56,13 +58,13 @@ export default {
       district,
       street,
       complement,
-      number,
+      number, 
       bio,
       days,
       hours,
       userName,
       password,
-      professionalImage,
+      image,
     };
 
     const schemma = Yup.object().shape({
@@ -83,7 +85,7 @@ export default {
       hours: Yup.string().required(),
       userName: Yup.string().required(),
       password: Yup.string().required(),
-      professionalImage: Yup.array(Yup.object().shape({
+      image: Yup.array(Yup.object().shape({
         path: Yup.string().required(),
       })),
     });

@@ -1,6 +1,6 @@
 import express from 'express';
-import person from './personRoutes';
-import professional from './professionalRoutes';
+import person from './person.Routes';
+import professional from './professional.Routes';
 
 const routes = express();
 

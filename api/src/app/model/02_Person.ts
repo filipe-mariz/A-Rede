@@ -10,7 +10,7 @@ import Image from './02_PersonImage';
 class Person {
     @PrimaryGeneratedColumn('increment')
     id: number
-
+ 
     @Column('varchar', { length: 50 })
     name: string
 
@@ -53,11 +53,11 @@ class Person {
       this.password = bcrypt.hashSync(this.password, 8)
     }
 
-    @OneToMany(() => Image, personImage => personImage.person, {
+    @OneToMany(() => Image, image => image.person, {
       cascade: ['insert', 'update'],
     })
     @JoinColumn({ name: 'person_id' })
-    Image: Image[]
+    image: Image[];
 }
 
 export default Person;

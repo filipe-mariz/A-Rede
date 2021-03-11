@@ -14,7 +14,7 @@ export default {
       help: person.help,
       lat: person.lat,
       long: person.long,
-      image: personImage.renderMany(person.Image),
+      image: personImage.renderMany(person.image),
     };
   },
 

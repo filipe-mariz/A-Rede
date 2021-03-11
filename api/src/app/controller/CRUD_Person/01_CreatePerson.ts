@@ -23,7 +23,9 @@ export default {
     const personRepository = getRepository(Person);    
 
     const requestImages = request.files as Express.Multer.File[];
-    const image = requestImages.map((image) => ({ path: image.filename }));
+    const image = requestImages.map(image => {
+      return { path: image.filename }
+  })
     /*
     const contactExists = personRepository.findOne({ where: {contact}})
     const userNameExists = personRepository.findOne({ where: {userName}})
@@ -73,6 +75,7 @@ export default {
     });
 
     const person = personRepository.create(data);
+
     await personRepository.save(person);
     response.status(201).json({ person });
   }

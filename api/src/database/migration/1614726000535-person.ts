@@ -77,7 +77,8 @@ export class person1614726000535 implements MigrationInterface {
           type: 'varchar',
           isNullable: false,
         },
-      ],
+      ]
+      
     }));
   }
 

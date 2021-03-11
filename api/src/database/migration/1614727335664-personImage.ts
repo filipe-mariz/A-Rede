@@ -28,7 +28,7 @@ export class personImage1614727335664 implements MigrationInterface {
 
       foreignKeys: [
         {
-          name: 'personaImage',
+          name: 'personImage',
           columnNames: ['person_id'],
           referencedTableName: 'Person',
           referencedColumnNames: ['id'],

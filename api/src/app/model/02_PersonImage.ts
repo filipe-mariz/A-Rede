@@ -3,16 +3,15 @@ import Person from './02_Person';
 
 @Entity('PersonImage')
 
-class Image {
+export default class Image {
     @PrimaryGeneratedColumn('increment')
     id: number
 
     @Column()
     path: string;
 
-    @ManyToOne(() => Person, (person) => person.Image)
+    @ManyToOne(() => Person, person => person.Image)
     @JoinColumn({ name: 'person_id' })
     person: Person
 }
 
-export default Image;

@@ -7,7 +7,7 @@ export default {
         /*const person = await getRepository(Person).findOne(request.params.id)
 
         if(person) {
-            getRepository(Person).update(person, request.body)
+            getRepository(Person).merge(person, request.body)
             const results = getRepository(Person).save(person)
             return response.json(results)
         }
